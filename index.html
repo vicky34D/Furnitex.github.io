@@ -53,10 +53,10 @@
     </div>
   </header>
 
-  <!-- HERO with Auto Image Slider -->
+ <!-- HERO with Auto Image Slider (2s delay) -->
 <section id="home" class="relative h-screen flex items-center justify-center overflow-hidden">
   <!-- Background images -->
-  <div id="hero-bg" class="absolute inset-0 bg-cover bg-center transition-all duration-[2000ms] ease-in-out"
+  <div id="hero-bg" class="absolute inset-0 bg-cover bg-center transition-all duration-[1500ms] ease-in-out"
        style="background-image: url('https://images.unsplash.com/photo-1615874959474-d609969a20ed?auto=format&fit=crop&w=2000&q=80');"></div>
   <div class="absolute inset-0 bg-black bg-opacity-40"></div>
 
@@ -92,15 +92,16 @@
     setTimeout(() => {
       hero.style.backgroundImage = `url('${images[index]}')`;
       hero.style.opacity = 1;
-    }, 1000); // fade out, change, fade in
-  }, 6000); // every 6 seconds
+    }, 800); // fade transition timing
+  }, 2000); // 2-second delay
 </script>
 
 <style>
   #hero-bg {
-    transition: opacity 1.5s ease-in-out, background-image 1s ease-in-out;
+    transition: opacity 1s ease-in-out, background-image 0.5s ease-in-out;
   }
 </style>
+
 
 
   <!-- ABOUT -->
