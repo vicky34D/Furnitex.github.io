@@ -1,348 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Furnitex - 25 Years of Home Furnishing</title>
-    
-    <!-- Load Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Configure Tailwind & Set Inter Font -->
-    <style>
-        /* Add Inter font family */
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
-        html {
-            font-family: 'Inter', sans-serif;
-            scroll-behavior: smooth;
-        }
-        /* Custom color for the brand */
-        .text-brand-primary {
-            color: #854d0e; /* amber-800 */
-        }
-        .bg-brand-primary {
-            background-color: #854d0e; /* amber-800 */
-        }
-        .hover\:bg-brand-primary-dark:hover {
-            background-color: #713f12; /* amber-900 */
-        }
-        .bg-brand-light {
-            background-color: #fefce8; /* yellow-50 */
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Furnitex | Luxury Home Furnishings Since 1999</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+    html {
+      font-family: 'Poppins', sans-serif;
+      scroll-behavior: smooth;
+    }
+    .bg-brand-gradient {
+      background: linear-gradient(135deg, #b45309, #92400e);
+    }
+    .text-gold {
+      color: #fcd34d;
+    }
+  </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
 
-    <!-- Header & Navigation Bar -->
-    <header class="bg-white shadow-md sticky top-0 z-50">
-        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <!-- Logo / Brand Name -->
-                <a href="#" class="text-3xl font-extrabold text-brand-primary">
-                    Furnitex
-                </a>
-                
-                <!-- Desktop Navigation Links -->
-                <div class="hidden md:flex space-x-8">
-                    <a href="#home" class="font-medium text-gray-600 hover:text-brand-primary transition duration-300">Home</a>
-                    <a href="#about" class="font-medium text-gray-600 hover:text-brand-primary transition duration-300">About Us</a>
-                    <a href="#featured" class="font-medium text-gray-600 hover:text-brand-primary transition duration-300">Featured</a>
-                    <a href="#catalogues" class="font-medium text-gray-600 hover:text-brand-primary transition duration-300">Catalogues</a>
-                    <a href="#contact" class="font-medium text-gray-600 hover:text-brand-primary transition duration-300">Contact</a>
-                </div>
-                
-                <!-- Mobile Menu Button (Hamburger) -->
-                <div class="md:hidden">
-                    <button id="mobile-menu-button" class="text-gray-700 hover:text-brand-primary focus:outline-none">
-                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-                        </svg>
-                    </button>
-                </div>
-            </div>
+  <!-- HEADER -->
+  <header class="bg-white/90 backdrop-blur-md shadow-md fixed top-0 left-0 w-full z-50">
+    <nav class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <h1 class="text-3xl font-extrabold text-brand-gradient bg-clip-text text-transparent bg-gradient-to-r from-amber-600 to-yellow-700">
+        Furnitex
+      </h1>
+      <ul class="hidden md:flex space-x-8 font-medium">
+        <li><a href="#home" class="hover:text-amber-700 transition">Home</a></li>
+        <li><a href="#about" class="hover:text-amber-700 transition">About</a></li>
+        <li><a href="#featured" class="hover:text-amber-700 transition">Featured</a></li>
+        <li><a href="#catalogues" class="hover:text-amber-700 transition">Catalogues</a></li>
+        <li><a href="#contact" class="hover:text-amber-700 transition">Contact</a></li>
+      </ul>
+      <button id="mobile-menu-button" class="md:hidden text-amber-700">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m0 6H4"/>
+        </svg>
+      </button>
+    </nav>
 
-            <!-- Mobile Menu (Hidden by default) -->
-            <div id="mobile-menu" class="hidden md:hidden pb-4">
-                <a href="#home" class="block py-2 px-3 rounded-md text-base font-medium text-gray-700 hover:bg-brand-light hover:text-brand-primary">Home</a>
-                <a href="#about" class="block py-2 px-3 rounded-md text-base font-medium text-gray-700 hover:bg-brand-light hover:text-brand-primary">About Us</a>
-                <a href="#featured" class="block py-2 px-3 rounded-md text-base font-medium text-gray-700 hover:bg-brand-light hover:text-brand-primary">Featured</a>
-                <a href="#catalogues" class="block py-2 px-3 rounded-md text-base font-medium text-gray-700 hover:bg-brand-light hover:text-brand-primary">Catalogues</a>
-                <a href="#contact" class="block py-2 px-3 rounded-md text-base font-medium text-gray-700 hover:bg-brand-light hover:text-brand-primary">Contact</a>
-            </div>
-        </nav>
-    </header>
+    <div id="mobile-menu" class="hidden md:hidden bg-white shadow-md">
+      <a href="#home" class="block px-6 py-3 hover:bg-amber-50">Home</a>
+      <a href="#about" class="block px-6 py-3 hover:bg-amber-50">About</a>
+      <a href="#featured" class="block px-6 py-3 hover:bg-amber-50">Featured</a>
+      <a href="#catalogues" class="block px-6 py-3 hover:bg-amber-50">Catalogues</a>
+      <a href="#contact" class="block px-6 py-3 hover:bg-amber-50">Contact</a>
+    </div>
+  </header>
 
-    <!-- Main Content -->
-    <main>
-        <!-- Hero Section -->
-        <section id="home" class="relative bg-cover bg-center pt-24 pb-32" style="background-image: url('https://source.unsplash.com/1920x1080/?luxury-living-room')">
-            <!-- Overlay for readability -->
-            <div class="absolute inset-0 bg-black bg-opacity-50"></div>
-            
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-                <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight drop-shadow-md">
-                    Timeless Furnishings for Your Home
-                </h1>
-                <p class="mt-6 text-xl text-gray-100 max-w-3xl mx-auto drop-shadow">
-                    With over <span class="font-bold text-yellow-300">25 years of experience</span>, Furnitex brings quality craftsmanship and elegant design to every room.
-                </p>
-                <a href="#catalogues" class="mt-10 inline-block bg-brand-primary text-white font-bold py-4 px-10 rounded-lg shadow-lg hover:bg-brand-primary-dark transition duration-300 transform hover:-translate-y-1">
-                    View Our Catalogues
-                </a>
-            </div>
-        </section>
+  <!-- HERO with Auto Image Slider -->
+<section id="home" class="relative h-screen flex items-center justify-center overflow-hidden">
+  <!-- Background images -->
+  <div id="hero-bg" class="absolute inset-0 bg-cover bg-center transition-all duration-[2000ms] ease-in-out"
+       style="background-image: url('https://images.unsplash.com/photo-1615874959474-d609969a20ed?auto=format&fit=crop&w=2000&q=80');"></div>
+  <div class="absolute inset-0 bg-black bg-opacity-40"></div>
 
-        <!-- About Us Section -->
-        <section id="about" class="py-24 bg-white">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-                <div>
-                    <img src="https://source.unsplash.com/600x400/?furniture-showroom" alt="Furnitex workshop or showroom" class="rounded-lg shadow-2xl" onerror="this.onerror=null;this.src='https://placehold.co/600x400/f7f3e8/854d0e?text=Our+Showroom';">
-                </div>
-                <div>
-                    <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 leading-tight">
-                        A Legacy of Quality<br> <span class="text-brand-primary">Spanning 25 Years</span>
-                    </h2>
-                    <p class="mt-6 text-lg text-gray-600">
-                        For over a quarter of a century, Furnitex has been synonymous with exceptional craftsmanship and timeless design. Our journey began with a simple mission: to bring high-quality, beautiful, and lasting furniture into our customers' homes.
-                    </p>
-                    <p class="mt-4 text-lg text-gray-600">
-                        We travel the world to source the finest materials and partner with skilled artisans who share our passion for quality. From our showroom to your living room, we are committed to providing a personalized experience and helping you create a space you truly love.
-                    </p>
-                </div>
-            </div>
-        </section>
+  <!-- Hero Content -->
+  <div class="relative z-10 text-center text-white px-6" data-aos="fade-up">
+    <h1 class="text-5xl md:text-6xl font-extrabold leading-tight">
+      Luxury Furniture for<br><span class="text-gold">Modern Living</span>
+    </h1>
+    <p class="mt-6 text-xl max-w-2xl mx-auto text-gray-200">
+      Experience timeless craftsmanship and style that defines your home.
+    </p>
+    <a href="#catalogues"
+       class="mt-10 inline-block bg-amber-600 hover:bg-amber-700 px-10 py-4 rounded-lg shadow-lg font-semibold transition">
+       Explore Collection
+    </a>
+  </div>
+</section>
 
-        <!-- Featured Products Section -->
-        <section id="featured" class="py-24 bg-brand-light">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center">
-                    <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">
-                        Featured Products
-                    </h2>
-                    <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
-                        Handpicked selections that define comfort and elegance.
-                    </p>
-                </div>
-                
-                <div class="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <!-- Product 1 -->
-                    <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col transition duration-300 transform hover:-translate-y-1 hover:shadow-2xl">
-                        <img src="https://source.unsplash.com/400x300/?modern-sofa" alt="Plush Sofa" class="w-full h-48 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/400x300/c7a97f/4a2c0a?text=Plush+Sofa';">
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-gray-900">The "Modena" Sofa</h3>
-                            <p class="mt-2 text-gray-600">Premium comfort in a modern design.</p>
-                        </div>
-                    </div>
-                    <!-- Product 2 -->
-                    <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col transition duration-300 transform hover:-translate-y-1 hover:shadow-2xl">
-                        <img src="https://source.unsplash.com/400x300/?dining-table" alt="Oak Dining Table" class="w-full h-48 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/400x300/a1887f/4a2c0a?text=Oak+Dining+Table';">
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-gray-900">Rustic Oak Table</h3>
-                            <p class="mt-2 text-gray-600">Seats up to 8 guests comfortably.</p>
-                        </div>
-                    </div>
-                    <!-- Product 3 -->
-                    <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col transition duration-300 transform hover:-translate-y-1 hover:shadow-2xl">
-                        <img src="https://source.unsplash.com/400x300/?queen-bed" alt="Queen Bed Frame" class="w-full h-48 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/400x300/d7ccc8/4a2c0a?text=Queen+Bed+Frame';">
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-gray-900">Canopy Queen Bed</h3>
-                            <p class="mt-2 text-gray-600">A statement piece for any bedroom.</p>
-                        </div>
-                    </div>
-                    <!-- Product 4 -->
-                    <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col transition duration-300 transform hover:-translate-y-1 hover:shadow-2xl">
-                        <img src="https://source.unsplash.com/400x300/?patio-furniture" alt="Patio Lounge Set" class="w-full h-48 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/400x300/b0bec5/4a2c0a?text=Patio+Lounge+Set';">
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-gray-900">"Azure" Patio Set</h3>
-                            <p class="mt-2 text-gray-600">All-weather wicker for outdoor luxury.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+<script>
+  // Background image slideshow for hero section
+  const hero = document.getElementById("hero-bg");
+  const images = [
+    "https://images.unsplash.com/photo-1615874959474-d609969a20ed?auto=format&fit=crop&w=2000&q=80", // warm modern living room
+    "https://images.unsplash.com/photo-1616628188856-5d33e8b9c9ef?auto=format&fit=crop&w=2000&q=80", // minimal apartment
+    "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=80", // bright interior
+    "https://images.unsplash.com/photo-1618213837799-1cfb39b81d1d?auto=format&fit=crop&w=2000&q=80"  // cozy living space
+  ];
 
-        <!-- Catalogue Section -->
-        <section id="catalogues" class="py-24 bg-gray-50">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center">
-                    <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">
-                        Download Our Catalogues
-                    </h2>
-                    <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
-                        Explore our latest collections for every part of your home.
-                    </p>
-                </div>
-                
-                <!-- 3-Slot Grid -->
-                <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-10">
-                    
-                    <!-- Catalogue Slot 1 -->
-                    <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col transition duration-300 transform hover:-translate-y-1 hover:shadow-xl">
-                        <img src="https://source.unsplash.com/600x400/?living-room-interior" alt="Living Room Furniture" class="w-full h-48 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x400/e0e7ff/4338ca?text=Living+Room+Collection';">
-                        <div class="p-6 flex flex-col flex-grow">
-                            <h3 class="text-2xl font-bold text-gray-900">Living Room Collection</h3>
-                            <p class="mt-3 text-gray-600 flex-grow">
-                                Discover our range of sofas, coffee tables, and entertainment centers designed for comfort and style.
-                            </p>
-                            <!-- IMPORTANT: Replace 'path/to/your-pdf.pdf' with the actual link to your PDF file -->
-                            <a href="living-room-catalogue.pdf" download class="mt-6 inline-block w-full text-center bg-brand-primary text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-brand-primary-dark transition duration-300">
-                                Download PDF
-                            </a>
-                        </div>
-                    </div>
+  let index = 0;
+  setInterval(() => {
+    index = (index + 1) % images.length;
+    hero.style.opacity = 0;
+    setTimeout(() => {
+      hero.style.backgroundImage = `url('${images[index]}')`;
+      hero.style.opacity = 1;
+    }, 1000); // fade out, change, fade in
+  }, 6000); // every 6 seconds
+</script>
 
-                    <!-- Catalogue Slot 2 -->
-                    <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col transition duration-300 transform hover:-translate-y-1 hover:shadow-xl">
-                        <img src="https://source.unsplash.com/600x400/?bedroom-interior" alt="Bedroom Furniture" class="w-full h-48 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x400/d1fae5/065f46?text=Bedroom+Essentials';">
-                        <div class="p-6 flex flex-col flex-grow">
-                            <h3 class="text-2xl font-bold text-gray-900">Bedroom Essentials</h3>
-                            <p class="mt-3 text-gray-600 flex-grow">
-                                Create your personal sanctuary with our collection of bed frames, dressers, and nightstands.
-                            </p>
-                            <!-- IMPORTANT: Replace 'path/to/your-pdf.pdf' with the actual link to your PDF file -->
-                            <a href="bedroom-catalogue.pdf" download class="mt-6 inline-block w-full text-center bg-brand-primary text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-brand-primary-dark transition duration-300">
-                                Download PDF
-                            </a>
-                        </div>
-                    </div>
+<style>
+  #hero-bg {
+    transition: opacity 1.5s ease-in-out, background-image 1s ease-in-out;
+  }
+</style>
 
-                    <!-- Catalogue Slot 3 -->
-                    <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col transition duration-300 transform hover:-translate-y-1 hover:shadow-xl">
-                        <img src="https://source.unsplash.com/600x400/?outdoor-patio" alt="Outdoor Furniture" class="w-full h-48 object-cover" onerror="this.onerror=null;this.src='httpsServices/placehold.co/600x400/feebc8/9a3412?text=Outdoor+&+Patio';">
-                        <div class="p-6 flex flex-col flex-grow">
-                            <h3 class="text-2xl font-bold text-gray-900">Outdoor & Patio</h3>
-                            <p class="mt-3 text-gray-600 flex-grow">
-                                Elevate your outdoor living space with our durable and stylish patio sets, loungers, and dining tables.
-                            </p>
-                            <!-- IMPORTANT: Replace 'path/to/your-pdf.pdf' with the actual link to your PDF file -->
-                            <a href="outdoor-catalogue.pdf" download class="mt-6 inline-block w-full text-center bg-brand-primary text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-brand-primary-dark transition duration-300">
-                                Download PDF
-                            </a>
-                        </div>
-                    </div>
-                    
-                </div>
-            </div>
-        </section>
 
-        <!-- Testimonials Section -->
-        <section id="testimonials" class="py-24 bg-white">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center">
-                    <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">
-                        What Our Customers Say
-                    </h2>
-                    <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
-                        Our 25-year legacy is built on relationships.
-                    </p>
-                </div>
+  <!-- ABOUT -->
+  <section id="about" class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-14 items-center">
+      <div data-aos="fade-right">
+        <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=900&q=80" class="rounded-xl shadow-2xl" alt="Showroom">
+      </div>
+      <div data-aos="fade-left">
+        <h2 class="text-4xl font-bold text-gray-900 mb-4">25 Years of Craftsmanship</h2>
+        <p class="text-gray-600 mb-4">Since 1999, Furnitex has been redefining comfort and elegance for modern homes. Each piece is crafted with precision and passion, bringing both luxury and longevity into your space.</p>
+        <p class="text-gray-600">We source sustainable materials and collaborate with artisans who share our dedication to design excellence.</p>
+      </div>
+    </div>
+  </section>
 
-                <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <!-- Testimonial 1 -->
-                    <div class="bg-gray-50 p-8 rounded-lg shadow-lg transition duration-300 transform hover:-translate-y-1 hover:shadow-xl">
-                        <div class="flex items-center mb-4">
-                            <!-- Star SVGs -->
-                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.367 2.445a1 1 0 00-.364 1.118l1.286 3.957c.3.921-.755 1.688-1.538 1.118l-3.367-2.445a1 1 0 00-1.175 0l-3.367 2.445c-.783.57-1.838-.197-1.538-1.118l1.286-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"></path></svg>
-                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.367 2.445a1 1 0 00-.364 1.118l1.286 3.957c.3.921-.755 1.688-1.538 1.118l-3.367-2.445a1 1 0 00-1.175 0l-3.367 2.445c-.783.57-1.838-.197-1.538-1.118l1.286-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"></path></svg>
-                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.367 2.445a1 1 0 00-.364 1.118l1.286 3.957c.3.921-.755 1.688-1.538 1.118l-3.367-2.445a1 1 0 00-1.175 0l-3.367 2.445c-.783.57-1.838-.197-1.538-1.118l1.286-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"></path></svg>
-                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.367 2.445a1 1 0 00-.364 1.118l1.286 3.957c.3.921-.755 1.688-1.538 1.118l-3.367-2.445a1 1 0 00-1.175 0l-3.367 2.445c-.783.57-1.838-.197-1.538-1.118l1.286-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"></path></svg>
-                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.367 2.445a1 1 0 00-.364 1.118l1.286 3.957c.3.921-.755 1.688-1.538 1.118l-3.367-2.445a1 1 0 00-1.175 0l-3.367 2.445c-.783.57-1.838-.197-1.538-1.118l1.286-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"></path></svg>
-                        </div>
-                        <p class="text-gray-700 italic text-lg mb-6">"The quality from Furnitex is unmatched. Our dining table is the centerpiece of our home now. Truly exceptional service."</p>
-                        <div class="flex items-center">
-                            <img src="https://source.unsplash.com/50x50/?woman-smiling" alt="Customer Sarah M." class="w-12 h-12 rounded-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/50x50/e0e7ff/4338ca?text=S.M.';">
-                            <div class="ml-4">
-                                <p class="font-bold text-gray-900">Sarah M.</p>
-                                <p class="text-sm text-gray-600">Homeowner</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Testimonial 2 -->
-                    <div class="bg-gray-50 p-8 rounded-lg shadow-lg transition duration-300 transform hover:-translate-y-1 hover:shadow-xl">
-                        <div class="flex items-center mb-4">
-                            <!-- Star SVGs -->
-                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.367 2.445a1 1 0 00-.364 1.118l1.286 3.957c.3.921-.755 1.688-1.538 1.118l-3.367-2.445a1 1 0 00-1.175 0l-3.367 2.445c-.783.57-1.838-.197-1.538-1.118l1.286-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"></path></svg>
-                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.367 2.445a1 1 0 00-.364 1.118l1.286 3.957c.3.921-.755 1.688-1.538 1.118l-3.367-2.445a1 1 0 00-1.175 0l-3.367 2.445c-.783.57-1.838-.197-1.538-1.118l1.286-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"></path></svg>
-                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.367 2.445a1 1 0 00-.364 1.118l1.286 3.957c.3.921-.755 1.688-1.538 1.118l-3.367-2.445a1 1 0 00-1.175 0l-3.367 2.445c-.783.57-1.838-.197-1.538-1.118l1.286-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"></path></svg>
-                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.367 2.445a1 1 0 00-.364 1.118l1.286 3.957c.3.921-.755 1.688-1.538 1.118l-3.367-2.445a1 1 0 00-1.175 0l-3.367 2.445c-.783.57-1.838-.197-1.538-1.118l1.286-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"></path></svg>
-                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.367 2.445a1 1 0 00-.364 1.118l1.286 3.957c.3.921-.755 1.688-1.538 1.118l-3.367-2.445a1 1 0 00-1.175 0l-3.367 2.445c-.783.57-1.838-.197-1.538-1.118l1.286-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"></path></svg>
-                        </div>
-                        <p class="text-gray-700 italic text-lg mb-6">"I've been a loyal customer for over a decade. The designs are timeless and the build quality lasts forever. Highly recommend."</p>
-                        <div class="flex items-center">
-                            <img src="https://source.unsplash.com/50x50/?man-smiling" alt="Customer Mark J." class="w-12 h-12 rounded-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/50x50/d1fae5/065f46?text=M.J.';">
-                            <div class="ml-4">
-                                <p class="font-bold text-gray-900">Mark J.</p>
-                                <p class="text-sm text-gray-600">Interior Designer</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Testimonial 3 -->
-                    <div class="bg-gray-50 p-8 rounded-lg shadow-lg transition duration-300 transform hover:-translate-y-1 hover:shadow-xl">
-                        <div class="flex items-center mb-4">
-                            <!-- Star SVGs -->
-                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.367 2.445a1 1 0 00-.364 1.118l1.286 3.957c.3.921-.755 1.688-1.538 1.118l-3.367-2.445a1 1 0 00-1.175 0l-3.367 2.445c-.783.57-1.838-.197-1.538-1.118l1.286-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"></path></svg>
-                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.367 2.445a1 1 0 00-.364 1.118l1.286 3.957c.3.921-.755 1.688-1.538 1.118l-3.367-2.445a1 1 0 00-1.175 0l-3.367 2.445c-.783.57-1.838-.197-1.538-1.118l1.286-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"></path></svg>
-                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.367 2.445a1 1 0 00-.364 1.118l1.286 3.957c.3.921-.755 1.688-1.538 1.118l-3.367-2.445a1 1 0 00-1.175 0l-3.367 2.445c-.783.57-1.838-.197-1.538-1.118l1.286-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"></path></svg>
-                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.367 2.445a1 1 0 00-.364 1.118l1.286 3.957c.3.921-.755 1.688-1.538 1.118l-3.367-2.445a1 1 0 00-1.175 0l-3.367 2.445c-.783.57-1.838-.197-1.538-1.118l1.286-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"></path></svg>
-                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.367 2.445a1 1 0 00-.364 1.118l1.286 3.957c.3.921-.755 1.688-1.538 1.118l-3.367-2.445a1 1 0 00-1.175 0l-3.367 2.445c-.783.57-1.838-.197-1.538-1.118l1.286-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"></path></svg>
-                        </div>
-                        <p class="text-gray-700 italic text-lg mb-6">"We just furnished our new patio, and it looks like a resort. The all-weather set is both beautiful and practical."</p>
-                        <div class="flex items-center">
-                            <img src="https://source.unsplash.com/50x50/?couple-smiling" alt="Customer David K." class="w-12 h-12 rounded-full object-cover" onerror="this.onerror=null;this.src='https::/placehold.co/50x50/feebc8/9a3412?text=D.K.';">
-                            <div class="ml-4">
-                                <p class="font-bold text-gray-900">David & Kim</p>
-                                <p class="text-sm text-gray-600">New Homeowners</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+  <!-- FEATURED -->
+  <section id="featured" class="py-24 bg-gradient-to-b from-amber-50 to-white">
+    <div class="text-center mb-16" data-aos="fade-up">
+      <h2 class="text-4xl font-bold text-gray-900">Featured Collections</h2>
+      <p class="text-lg text-gray-600 mt-2">Our signature designs that balance beauty and function.</p>
+    </div>
 
-        <!-- Contact Section -->
-        <section id="contact" class="relative py-24 bg-cover bg-center" style="background-image: url('https://source.unsplash.com/1920x1080/?modern-office-blur')">
-            <!-- Overlay for readability -->
-            <div class="absolute inset-0 bg-gray-900 bg-opacity-70"></div>
-            
-            <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-24">
-                 <h2 class="text-3xl md:text-4xl font-extrabold text-white">
-                    Get in Touch
-                </h2>
-                <p class="mt-4 text-lg text-gray-200">
-                    Have a question or a custom project in mind? We'd love to hear from you.
-                </p>
-                <a href="mailto:info@furnitex.com" class="mt-10 inline-block bg-brand-primary text-white font-bold py-4 px-10 rounded-lg shadow-lg hover:bg-brand-primary-dark transition duration-300">
-                    Email Us: info@furnitex.com
-                </a>
-                <p class="mt-6 text-gray-200">Or call us at: (555) 123-4567</p>
-            </div>
-        </section>
-
-    </main>
-    
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-gray-300">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 text-center">
-            <p>&copy; 2025 Furnitex. All rights reserved.</p>
-            <p class="mt-2 text-sm">Quality Home Furnishings Since 1999</p>
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-8">
+      <div data-aos="zoom-in" class="bg-white shadow-xl rounded-xl overflow-hidden hover:shadow-2xl transition">
+        <img src="https://images.unsplash.com/photo-1616627988024-86a6938f84c0?auto=format&fit=crop&w=900&q=80" class="w-full h-52 object-cover">
+        <div class="p-6">
+          <h3 class="font-bold text-xl">Elegant Sofa Set</h3>
+          <p class="text-gray-600 mt-2">Soft velvet with a royal finish for contemporary living rooms.</p>
         </div>
-    </footer>
+      </div>
+      <div data-aos="zoom-in" class="bg-white shadow-xl rounded-xl overflow-hidden hover:shadow-2xl transition">
+        <img src="https://images.unsplash.com/photo-1600585154207-7b9d57e4c25e?auto=format&fit=crop&w=900&q=80" class="w-full h-52 object-cover">
+        <div class="p-6">
+          <h3 class="font-bold text-xl">Rustic Oak Table</h3>
+          <p class="text-gray-600 mt-2">Solid oak design blending tradition and modern elegance.</p>
+        </div>
+      </div>
+      <div data-aos="zoom-in" class="bg-white shadow-xl rounded-xl overflow-hidden hover:shadow-2xl transition">
+        <img src="https://images.unsplash.com/photo-1554995207-c18c203602cb?auto=format&fit=crop&w=900&q=80" class="w-full h-52 object-cover">
+        <div class="p-6">
+          <h3 class="font-bold text-xl">Canopy Bed Frame</h3>
+          <p class="text-gray-600 mt-2">Elegant wood structure designed for timeless bedrooms.</p>
+        </div>
+      </div>
+      <div data-aos="zoom-in" class="bg-white shadow-xl rounded-xl overflow-hidden hover:shadow-2xl transition">
+        <img src="https://images.unsplash.com/photo-1600585153946-596af9009e70?auto=format&fit=crop&w=900&q=80" class="w-full h-52 object-cover">
+        <div class="p-6">
+          <h3 class="font-bold text-xl">Patio Lounge Set</h3>
+          <p class="text-gray-600 mt-2">All-weather wicker for outdoor sophistication.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <!-- JavaScript for Mobile Menu -->
-    <script>
-        const menuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
+  <!-- CONTACT -->
+  <section id="contact" class="py-24 bg-cover bg-center relative" 
+           style="background-image:url('https://images.unsplash.com/photo-1578898887932-dce23a9ab6c3?auto=format&fit=crop&w=2000&q=80');">
+    <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+    <div class="relative text-center text-white z-10 px-6 max-w-2xl mx-auto">
+      <h2 class="text-4xl font-bold mb-4" data-aos="fade-up">Get In Touch</h2>
+      <p class="text-lg mb-8 text-gray-200" data-aos="fade-up">Have a question or a project in mind? Let's design something extraordinary together.</p>
+      <a href="mailto:info@furnitex.com" class="bg-amber-600 hover:bg-amber-700 px-10 py-4 rounded-lg shadow-lg font-semibold transition">info@furnitex.com</a>
+      <p class="mt-6 text-gray-200">Call us: (555) 123-4567</p>
+    </div>
+  </section>
 
-        menuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
+  <!-- FOOTER -->
+  <footer class="bg-gray-900 text-gray-300 text-center py-10">
+    <p>&copy; 2025 Furnitex. All Rights Reserved.</p>
+    <p class="text-sm mt-2">Crafted with care and sustainability in mind.</p>
+  </footer>
 
-        // Close menu when a link is clicked
-        document.querySelectorAll('#mobile-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-            });
-        });
-    </script>
+  <script>
+    AOS.init({ duration: 900, once: true });
+    const menuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuButton.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+  </script>
 </body>
 </html>
