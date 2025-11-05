@@ -76,29 +76,58 @@
 </section>
 
 <script>
-  // Background image slideshow for hero section
-  const hero = document.getElementById("hero-bg");
-  const images = [
-    "https://images.unsplash.com/photo-1615874959474-d609969a20ed?auto=format&fit=crop&w=2000&q=80", // warm modern living room
-    "https://images.unsplash.com/photo-1616628188856-5d33e8b9c9ef?auto=format&fit=crop&w=2000&q=80", // minimal apartment
-    "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=80", // bright interior
-    "https://images.unsplash.com/photo-1618213837799-1cfb39b81d1d?auto=format&fit=crop&w=2000&q=80"  // cozy living space
-  ];
+    const hero = document.getElementById("hero-bg");
+    const images = [
+        "img/landscape%20img/l1.jpg",
+        "img/landscape%20img/l3.jpg",
+        "img/landscape%20img/l4.jpg",
+        "img/landscape%20img/l5.jpg",
+        "img/landscape%20img/l6.jpg"
+    ];
 
-  let index = 0;
-  setInterval(() => {
-    index = (index + 1) % images.length;
-    hero.style.opacity = 0;
-    setTimeout(() => {
-      hero.style.backgroundImage = `url('${images[index]}')`;
-      hero.style.opacity = 1;
-    }, 800); // fade transition timing
-  }, 2000); // 2-second delay
+    let currentIndex = 0;
+    
+    function slide() {
+        currentIndex = (currentIndex + 1) % images.length;
+        
+        // Create new div for next image
+        const nextSlide = document.createElement('div');
+        nextSlide.className = 'absolute inset-0 bg-cover bg-center';
+        nextSlide.style.backgroundImage = `url('${images[currentIndex]}')`;
+        nextSlide.style.transform = 'translateX(100%)';
+        
+        // Add to container
+        hero.parentElement.appendChild(nextSlide);
+        
+        // Slide animation
+        requestAnimationFrame(() => {
+            nextSlide.style.transition = 'transform 1s ease-in-out';
+            hero.style.transition = 'transform 1s ease-in-out';
+            
+            nextSlide.style.transform = 'translateX(0)';
+            hero.style.transform = 'translateX(-100%)';
+            
+            // Cleanup after animation
+            setTimeout(() => {
+                hero.remove();
+                nextSlide.id = 'hero-bg';
+                hero = nextSlide;
+            }, 1000);
+        });
+    }
+
+    setInterval(slide, 5000);
 </script>
 
 <style>
+    #hero-bg {
+        transition: transform 1s ease-in-out;
+    }
+</style>
+
+<style>
   #hero-bg {
-    transition: opacity 1s ease-in-out, background-image 0.5s ease-in-out;
+    transition: opacity 2s ease-in-out, background-image 0.5s ease-in-out;
   }
 </style>
 
