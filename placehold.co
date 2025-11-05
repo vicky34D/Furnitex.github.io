@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Furnitex - 25 Years of Home Furnishing</title>
+    
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Configure Tailwind & Set Inter Font -->
+    <style>
+        /* Add Inter font family */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+        html {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        /* Custom color for the brand */
+        .text-brand-primary {
+            color: #854d0e; /* amber-800 */
+        }
+        .bg-brand-primary {
+            background-color: #854d0e; /* amber-800 */
+        }
+        .hover\:bg-brand-primary-dark:hover {
+            background-color: #713f12; /* amber-900 */
+        }
+        .bg-brand-light {
+            background-color: #fefce8; /* yellow-50 */
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Header & Navigation Bar -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo / Brand Name -->
+                <a href="#" class="text-3xl font-extrabold text-brand-primary">
+                    Furnitex
+                </a>
+                
+                <!-- Desktop Navigation Links -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="font-medium text-gray-600 hover:text-brand-primary transition duration-300">Home</a>
+                    <a href="#about" class="font-medium text-gray-600 hover:text-brand-primary transition duration-300">About Us</a>
+                    <a href="#catalogues" class="font-medium text-gray-600 hover:text-brand-primary transition duration-300">Catalogues</a>
+                    <a href="#contact" class="font-medium text-gray-600 hover:text-brand-primary transition duration-300">Contact</a>
+                </div>
+                
+                <!-- Mobile Menu Button (Hamburger) -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-700 hover:text-brand-primary focus:outline-none">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Menu (Hidden by default) -->
+            <div id="mobile-menu" class="hidden md:hidden pb-4">
+                <a href="#home" class="block py-2 px-3 rounded-md text-base font-medium text-gray-700 hover:bg-brand-light hover:text-brand-primary">Home</a>
+                <a href="#about" class="block py-2 px-3 rounded-md text-base font-medium text-gray-700 hover:bg-brand-light hover:text-brand-primary">About Us</a>
+                <a href="#catalogues" class="block py-2 px-3 rounded-md text-base font-medium text-gray-700 hover:bg-brand-light hover:text-brand-primary">Catalogues</a>
+                <a href="#contact" class="block py-2 px-3 rounded-md text-base font-medium text-gray-700 hover:bg-brand-light hover:text-brand-primary">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="relative bg-cover bg-center pt-24 pb-32" style="background-image: url('https://placehold.co/1920x1080/a9a28c/ffffff?text=Stylish+Furnishings')">
+            <!-- Overlay for readability -->
+            <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+            
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+                <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight drop-shadow-md">
+                    Timeless Furnishings for Your Home
+                </h1>
+                <p class="mt-6 text-xl text-gray-100 max-w-3xl mx-auto drop-shadow">
+                    With over <span class="font-bold text-yellow-300">25 years of experience</span>, Furnitex brings quality craftsmanship and elegant design to every room.
+                </p>
+                <a href="#catalogues" class="mt-10 inline-block bg-brand-primary text-white font-bold py-4 px-10 rounded-lg shadow-lg hover:bg-brand-primary-dark transition duration-300 transform hover:-translate-y-1">
+                    View Our Catalogues
+                </a>
+            </div>
+        </section>
+
+        <!-- About Us Section -->
+        <section id="about" class="py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                <div>
+                    <img src="https://placehold.co/600x400/f7f3e8/854d0e?text=Our+Workshop" alt="Furnitex workshop or showroom" class="rounded-lg shadow-2xl">
+                </div>
+                <div>
+                    <h2 class="text-sm font-semibold text-brand-primary uppercase tracking-wide">About Furnitex</h2>
+                    <p class="mt-3 text-3xl md:text-4xl font-extrabold text-gray-900">
+                        A Legacy of Quality
+                    </p>
+                    <p class="mt-6 text-lg text-gray-600">
+                        For over 25 years, Furnitex has been dedicated to the art of home furnishing. We believe that furniture is more than just an object; it's a part of your home's story.
+                    </p>
+                    <p class="mt-4 text-lg text-gray-600">
+                        Our collections are curated with an eye for timeless design, durability, and comfort. From classic pieces to modern statements, we provide furnishings that last a lifetime.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Catalogue Section -->
+        <section id="catalogues" class="py-24 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">
+                        Download Our Catalogues
+                    </h2>
+                    <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
+                        Explore our latest collections for every part of your home.
+                    </p>
+                </div>
+                
+                <!-- 3-Slot Grid -->
+                <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-10">
+                    
+                    <!-- Catalogue Slot 1 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col">
+                        <img src="https://placehold.co/600x400/e0e7ff/4338ca?text=Living+Room+Collection" alt="Living Room Furniture" class="w-full h-48 object-cover">
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-2xl font-bold text-gray-900">Living Room Collection</h3>
+                            <p class="mt-3 text-gray-600 flex-grow">
+                                Discover our range of sofas, coffee tables, and entertainment centers designed for comfort and style.
+                            </p>
+                            <!-- IMPORTANT: Replace 'path/to/your-pdf.pdf' with the actual link to your PDF file -->
+                            <a href="living-room-catalogue.pdf" download class="mt-6 inline-block w-full text-center bg-brand-primary text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-brand-primary-dark transition duration-300">
+                                Download PDF
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Catalogue Slot 2 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col">
+                        <img src="https://placehold.co/600x400/d1fae5/065f46?text=Bedroom+Essentials" alt="Bedroom Furniture" class="w-full h-48 object-cover">
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-2xl font-bold text-gray-900">Bedroom Essentials</h3>
+                            <p class="mt-3 text-gray-600 flex-grow">
+                                Create your personal sanctuary with our collection of bed frames, dressers, and nightstands.
+                            </p>
+                            <!-- IMPORTANT: Replace 'path/to/your-pdf.pdf' with the actual link to your PDF file -->
+                            <a href="bedroom-catalogue.pdf" download class="mt-6 inline-block w-full text-center bg-brand-primary text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-brand-primary-dark transition duration-300">
+                                Download PDF
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Catalogue Slot 3 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col">
+                        <img src="https://placehold.co/600x400/feebc8/9a3412?text=Outdoor+&+Patio" alt="Outdoor Furniture" class="w-full h-48 object-cover">
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-2xl font-bold text-gray-900">Outdoor & Patio</h3>
+                            <p class="mt-3 text-gray-600 flex-grow">
+                                Elevate your outdoor living space with our durable and stylish patio sets, loungers, and dining tables.
+                            </p>
+                            <!-- IMPORTANT: Replace 'path/to/your-pdf.pdf' with the actual link to your PDF file -->
+                            <a href="outdoor-catalogue.pdf" download class="mt-6 inline-block w-full text-center bg-brand-primary text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-brand-primary-dark transition duration-300">
+                                Download PDF
+                            </a>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-24 bg-white">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                 <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">
+                    Get in Touch
+                </h2>
+                <p class="mt-4 text-lg text-gray-600">
+                    Have a question or a custom project in mind? We'd love to hear from you.
+                </p>
+                <a href="mailto:info@furnitex.com" class="mt-10 inline-block bg-gray-800 text-white font-bold py-4 px-10 rounded-lg shadow-lg hover:bg-gray-900 transition duration-300">
+                    Email Us: info@furnitex.com
+                </a>
+                <p class="mt-6 text-gray-600">Or call us at: (555) 123-4567</p>
+            </div>
+        </section>
+
+    </main>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-gray-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 text-center">
+            <p>&copy; 2025 Furnitex. All rights reserved.</p>
+            <p class="mt-2 text-sm">Quality Home Furnishings Since 1999</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Mobile Menu -->
+    <script>
+        const menuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close menu when a link is clicked
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
